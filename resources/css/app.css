@@ -1,0 +1,240 @@
+@import 'tailwindcss';
+
+@source '../views/**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-serif: "Times New Roman", Times, Georgia, serif;
+    --font-sans: "Times New Roman", Times, ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+    --neon-green: #00ff00;
+    --neon-green-rgb: 0, 255, 0;
+    --neon-cyan: rgb(0, 187, 255);
+    --neon-cyan-border: rgb(0, 208, 255);
+    --dark-glass: rgba(0, 0, 0, 0.78);
+    --dark-glass-border: rgba(0, 255, 0, 0.35);
+}
+
+/* Original Legacy Theme Background */
+body {
+    background-image: url("/images/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #050811;
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #008800;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00ff00;
+}
+
+/* Legacy Header & Navigation */
+.sigla-header {
+    background: rgba(0, 0, 0, 0.75);
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.sigla-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    transition: all 0.25s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.sigla-nav a:hover,
+.sigla-nav a.active {
+    color: #00ff00;
+    border-bottom: 2px solid #00ff00;
+}
+
+/* Glass Card Container */
+.sigla-card {
+    background: rgba(0, 0, 0, 0.82);
+    border: 1px solid rgba(0, 255, 0, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.sigla-card-subtle {
+    background: rgba(18, 18, 18, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+/* Legacy Tagline Styling */
+.one-name {
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+}
+.solo-one {
+    color: rgb(0, 255, 0);
+    font-weight: 800;
+}
+.solo-two {
+    color: rgb(0, 187, 255);
+    font-weight: 800;
+}
+
+/* Legacy Button Styles */
+.btn-sigla-primary {
+    background: black;
+    color: white;
+    border: 1px solid rgb(0, 208, 255);
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-sigla-primary:hover {
+    background: rgb(0, 255, 0);
+    color: black;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.btn-sigla-green {
+    background: rgb(0, 255, 0);
+    color: black;
+    border: 1px solid rgb(0, 255, 0);
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-sigla-green:hover {
+    background: #00cc00;
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.btn-sigla-red {
+    background: #ff3333;
+    color: white;
+    border: 1px solid #ff3333;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.btn-sigla-red:hover {
+    background: #cc0000;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
+}
+
+/* Legacy Form Inputs */
+.sigla-input {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sigla-input:focus {
+    border-color: rgb(0, 255, 0) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3) !important;
+    outline: none !important;
+}
+
+/* Legacy Tables with Green Borders */
+.sigla-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+.sigla-table th {
+    border: 1px solid green;
+    background: rgba(0, 50, 0, 0.4);
+    color: #00ff00;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+.sigla-table td {
+    border: 1px solid green;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.5);
+}
+.sigla-table tr:hover td {
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* Legacy Employee Buttons */
+.employee-button {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #222;
+    color: #00ff00;
+    text-decoration: none;
+    border: 1px solid #00ff00;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.25s ease;
+}
+.employee-button:hover,
+.employee-button.active {
+    background-color: #00ff00;
+    color: #000;
+    font-weight: bold;
+}
+
+/* QR Scanner styling */
+#reader {
+    border: 2px solid #00ff00 !important;
+    border-radius: 12px;
+    background: #000000 !important;
+    padding: 10px;
+    color: white;
+}
+#reader button {
+    background-color: #00ff00 !important;
+    color: black !important;
+    font-weight: bold !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 8px 14px !important;
+    cursor: pointer;
+}
+#reader button:hover {
+    background-color: #00cc00 !important;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background: white !important;
+        background-image: none !important;
+        color: black !important;
+    }
+}
